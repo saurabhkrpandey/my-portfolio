@@ -414,6 +414,35 @@ export default function Home()
           <strong>Email</strong>
           <span>saurabhkrpandey2@gmail.com</span>
         </div>
+        <div className="contact-social-links">
+
+  <a
+    href="https://wa.me/919334256217"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+  >
+    <FaWhatsapp />
+  </a>
+
+  <a
+    href="https://www.instagram.com/saurabh_kr_pandey"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <FaInstagram />
+  </a>
+  <a
+    href="https://www.facebook.com/saurbh.saurbhpandey.7"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <FaFacebookF />
+  </a>
+
+</div>
 
         {/* <div className="contact-detail">
           <strong>Phone</strong>

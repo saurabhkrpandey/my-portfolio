@@ -1101,3 +1101,238 @@ nav h2 {
   object-fit: cover;
   display: block;
 }
+/* Fixed Social Media Bar */
+.social-links {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 9999;
+}
+
+.social-links {
+  position: fixed;
+  right: 25px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 9999;
+}
+
+.social-links a {
+  font-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.18);
+}
+
+/* WhatsApp */
+.social-links a:nth-child(1) {
+  color: #25D366;
+}
+
+/* Instagram */
+.social-links a:nth-child(2) {
+  color: #E4405F;
+}
+
+/* Facebook */
+.social-links a:nth-child(3) {
+  color: #1877F2;
+}
+
+.social-links a:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 10px currentColor);
+}
+/* Modern Social Icons Animation */
+.social-links a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: socialFloat 3s ease-in-out infinite;
+}
+
+/* Har icon thoda alag time par move hoga */
+.social-links a:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.social-links a:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.social-links a:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+/* Floating Animation */
+@keyframes socialFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Hover effect */
+.social-links a:hover {
+  transform: scale(1.2) translateY(-3px);
+}
+@media (max-width: 600px) {
+  .social-links {
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 9999;
+  }
+
+  .social-links a {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-shrink: 0;
+  }
+}
+/* Contact Social Icons - Bigger & Professional */
+
+.contact-social-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.contact-social-links a {
+  width: 45px;
+  height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  text-decoration: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.contact-social-links a:nth-child(1) {
+  color: #25D366;
+}
+
+.contact-social-links a:nth-child(2) {
+  color: #E4405F;
+}
+
+.contact-social-links a:nth-child(3) {
+  color: #1877F2;
+}
+
+.contact-social-links a:hover {
+  transform: translateY(-5px) scale(1.12);
+  filter: brightness(1.2);
+}
+/* ===== PROFILE PHOTO ANIMATION ===== */
+
+.profile-image,
+.profile-photo {
+  animation: profileFloat 4s ease-in-out infinite;
+}
+
+@keyframes profileFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+/* ===== MODERN BUTTON HOVER ===== */
+
+.hero-text a,
+.hero-text button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-text a:hover,
+.hero-text button:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 10px 25px rgba(0, 150, 255, 0.35);
+}
+/* ===== PROJECT CARD HOVER ===== */
+
+.project-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+/* ===== CERTIFICATE HOVER ===== */
+
+.certificate-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+/* ===== SKILLS HOVER ===== */
+
+.skill-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+/* ===== ABOUT SECTION HOVER ===== */
+
+.about-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+/* ===== NAVBAR HOVER ===== */
+
+nav a {
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+/* ===== PREMIUM PROFILE EFFECT ===== */
+
+.profile-image,
+.profile-photo {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.25));
+}
+
+.profile-image:hover,
+.profile-photo:hover {
+  transform: scale(1.06) translateY(-5px);
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.35));
+}
