@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-
-export default function Home() {
+import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
+export default function Home()
+{
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -414,7 +415,7 @@ export default function Home() {
           <span>saurabhkrpandey2@gmail.com</span>
         </div>
 
-        <div className="contact-detail">
+        {/* <div className="contact-detail">
           <strong>Phone</strong>
           <span>+91 9334256217</span>
         </div>
@@ -434,6 +435,36 @@ export default function Home() {
   >
     Facebook
   </a>
+</div> */}
+<div className="social-links">
+
+  <a
+    href="https://wa.me/919334256217"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+  >
+    <FaWhatsapp />
+  </a>
+
+  <a
+    href="https://www.instagram.com/saurabh_kr_pandey"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <FaInstagram />
+  </a>
+
+  <a
+    href="https://www.facebook.com/saurbh.saurbhpandey.7"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <FaFacebookF />
+  </a>
+
 </div>
       </div>
 
