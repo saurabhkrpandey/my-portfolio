@@ -2,8 +2,43 @@
 
 import { useState } from "react";
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+);
 export default function Home()
 {
+  const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [message, setMessage] = useState("");
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const { error } = await supabase
+    .from("messages")
+    .insert([
+      {
+        name,
+        email,
+        message,
+      },
+    ]);
+
+  if (error) {
+    alert("Failed to send message");
+    console.error(error);
+    return;
+  }
+
+  alert("Message sent successfully!");
+
+  setName("");
+  setEmail("");
+  setMessage("");
+};
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -70,7 +105,7 @@ export default function Home()
           I build modern, responsive and user-friendly websites.
         </p>}
 
-      <button>View My Projects</button>
+      {/* <button>View My Projects</button> */}
     </div>
   </div>
 </section>
@@ -232,7 +267,7 @@ export default function Home()
             employers.
           </p>
 
-          <button>View Project</button>
+         <button>View Project</button>
         </div>
       </div>
 
@@ -497,20 +532,50 @@ export default function Home()
 </div>
       </div>
 
-      <form className="contact-form">
+      {/* <form className="contact-form"> */}
+      <form
+  className="contact-form"
+  onSubmit={async (e) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const { error } = await supabase.from("contact_messages").insert([
+      {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: String(formData.get("message") ?? ""),
+      },
+    ]);
+
+    if (error) {
+      alert("Message failed to send ❌");
+      console.error("SUPABASE ERROR:", error);
+alert(error.message);
+      return;
+    }
+
+    alert("Message sent successfully ✅");
+    form.reset();
+  }}
+>
 
         <input
           type="text"
+          name="name"
           placeholder="Your Name"
         />
 
         <input
           type="email"
+          name="email"
           placeholder="Your Email"
         />
 
         <textarea
           rows={6}
+          name="message"
           placeholder="Your Message"
         ></textarea>
 
